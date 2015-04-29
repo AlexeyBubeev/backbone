@@ -1,4 +1,4 @@
 # backbone
 single page app
 
-<a href="backbone.stopbit.ru">Demo</a>
+<a href="http://backbone.stopbit.ru">Demo</a>
