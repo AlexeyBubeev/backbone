@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>users</title>
+    <title>BLackBone</title>
     <meta charset='utf-8'>
     <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" />
     <script src="/js/jquery.min.js"></script>
@@ -10,6 +10,7 @@
     <script src="/js/backbone-forms.js"></script>
     <script src="/js/bootstrap3.js"></script>
     <script src="/js/backbone.syphon.min.js"></script>
+    <script src="/js/backbone.stickit.js"></script>
     <script src="/js/user.js"></script>
   </head>
   <body>
@@ -39,15 +40,56 @@
         <table id="usesrs" class="table table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>Удалить</th>
-                    <th>Номер</th>
-                    <th>Имя</th>
-                    <th>Фамилия</th>
-                    <th>Отчество</th>
-                    <th>Отдел</th>
-                    <th>Должность</th>
-                    <th>Дата рождения</th>
-                    <th>Место рождения</th>
+                    <th>Удалить пользователя</th>
+                    <th>
+                        <div class="form-group">
+                            <label for="usr">Номер</label>
+                            <input type="text" title="id" class="filteruser form-control">
+                        </div>
+                    </th>
+                    <th>
+                        <div class="form-group">
+                            <label for="usr">Имя</label>
+                            <input type="text" title="first_name" class="filteruser form-control">
+                        </div>
+                    </th>
+                    <th>
+                        <div class="form-group">
+                            <label for="usr">Фамилия</label>
+                            <input type="text" title="last_name" class="filteruser form-control">
+                        </div>
+                    </th>
+                    <th>
+                        <div class="form-group">
+                            <label for="usr">Отчество</label>
+                            <input type="text" title="middle_name" class="filteruser form-control">
+                        </div>
+                    </th>
+                    <th>
+                        <div class="form-group" id="filterorder">
+                            <label for="filterorderselect">Отдел:</label>
+                            <select id="filterorderselect" class="form-control filterorderselect">
+                            </select>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="form-group">
+                            <label for="usr">Должность</label>
+                            <input type="text" title="job" class="filteruser form-control">
+                        </div>
+                    </th>
+                    <th>
+                        <div class="form-group">
+                            <label for="usr">Дата рождения</label>
+                            <input type="text" title="birthday" class="filteruser form-control">
+                        </div>
+                    </th>
+                    <th>
+                        <div class="form-group">
+                            <label for="usr">Место рождения</label>
+                            <input type="text" title="birthplace" class="filteruser form-control">
+                        </div>
+                    </th>
                 </tr>
             </thead>
             <tbody>

@@ -14,7 +14,7 @@ function getDepartments() {
                 label  => $row->name
             );
         }
-        echo json_encode($departments, JSON_UNESCAPED_UNICODE);
+        echo json_encode($departments);
 
     } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';

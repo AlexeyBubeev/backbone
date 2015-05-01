@@ -1,7 +1,7 @@
 <?php
 getUsers();
 function getUsers() {
-    $sql = 'SELECT u.id, u.first_name, u.last_name, u.middle_name, d.name as department_name, u.job, DATE_FORMAT(u.birthday,\'%d.%m.%Y\') as birthday, u.birthplace FROM users u JOIN department d ON u.department_id = d.id';
+    $sql = 'SELECT u.id, u.first_name, u.last_name, u.middle_name, d.name as department_name, u.job, DATE_FORMAT(u.birthday,\'%d.%m.%Y\') as birthday, u.birthplace, u.department_id as dep_id FROM users u JOIN department d ON u.department_id = d.id';
     try {
         $db = getConnection();
         $dbh = $db->query($sql);
@@ -20,7 +20,7 @@ function getUsers() {
                 birthplace => $row->birthplace
             );
         }
-        echo json_encode($users, JSON_UNESCAPED_UNICODE);
+        echo json_encode($users);
     } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }
